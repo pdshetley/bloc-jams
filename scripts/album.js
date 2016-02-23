@@ -84,7 +84,7 @@ var setCurrentAlbum = function(album) {
      }
  };
 
-var child = document.getElementByClassName('album-view-title')[0];
+var child = document.getElementsByClassName('album-view-title')[0];
 var noParent = document.querySelector('html');
 
 var findParentByClassName = function(element, targetClass) {
@@ -105,8 +105,8 @@ var findParentByClassName = function(element, targetClass) {
 };
 
 findParentByClassName(noParent, 'banana');
-fndParentByClassName(child, 'banana');
-findParentClassName(child, 'album-view');
+findParentByClassName(child, 'banana');
+findParentByClassName(child, 'album-view');
 
 var clickHandler = function(targetElement) {
     
@@ -121,10 +121,10 @@ var clickHandler = function(targetElement) {
               currentlyPlayingSong = null;
    
     } else if (currentlyPlayingSong !== songItem.getAttribute('data-song-number')) {
-        var currentlyPlaying SongElement = document.querySelector('[data-song-number="' + currentlyPlayingSong + '"]');
+        var currentlyPlayingSongElement = document.querySelector('[data-song-number="' + currentlyPlayingSong + '"]');
         currentlyPlayingSongElement.innerHTML = currentlyPlayingSongElement.getAttribute('data-song-number');
         songItem.innerHTML = pauseButtonTemplate;
-        currentlyPlaying Song = songItem.getAttribute('data-song-number');
+        currentlyPlayingSong = songItem.getAttribute('data-song-number');
     }
         
 };
@@ -139,7 +139,7 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
 // Store state of playing songs
-var currentlyPlayingSong - null;
+var currentlyPlayingSong = null;
  
 window.onload = function() {
      setCurrentAlbum(albumPicasso);
@@ -150,7 +150,7 @@ window.onload = function() {
             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
             var songItem = getSongItem(event.target);
             
-            if (songItem.getAttribute('data-song-number) !== currentlyPlayingSong) {
+            if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
                 songItem.innerHTML = playButtonTemplate;
             }
     }
