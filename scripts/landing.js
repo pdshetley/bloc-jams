@@ -4,7 +4,7 @@ var animatePoints = function() {
             opacity: 1,
             transform: 'scaleX(1) translateY(0)'
         });
-});
+};
     // #6 
     $.each($('.point'), revealPoint);
 };
